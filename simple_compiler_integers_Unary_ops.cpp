@@ -211,18 +211,14 @@ private:
             const Token &operand_token = expect_token(TokenType::INTEGER_LITERAL);
             assembly_output.push_back("  PUSH " + operand_token.value);
 
-            if (op_type == TokenType::OPERATOR_NEG)
-            {
-                assembly_output.push_back("  NEG");
-            }
-            else if (op_type == TokenType::OPERATOR_BIT_NOT)
-            {
-                assembly_output.push_back("  NOT");
-            }
+            if(op_type == TokenType::OPERATOR_NEG)
+                    assembly_output.push_back("NEG");
+            else if(op_type == TokenType::OPERATOR_BIT_NOT)
+                        assembly_output.push_back(" Not");
             else
-            {
-                assembly_output.push_back("  LNOT");
-            }
+                assembly_output.push_back(" LNOT");
+
+
         }
         break;
         default:
